@@ -10,40 +10,68 @@
       font-family: Arial, sans-serif;
       background: #000;
       color: white;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
     }
 
     h1 {
-      margin: 20px;
+      text-align: center;
+      margin: 15px 0;
       font-size: 32px;
     }
 
-    .buttons {
-      margin-bottom: 20px;
+    .layout {
+      display: flex;
+      flex: 1;
     }
 
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #111;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-      cursor: pointer;
+    .side {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
     }
 
-    .btn:hover {
-      background: #333;
+    .center {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     iframe {
-      width: 90%;
-      height: 75vh;
+      width: 95%;
+      height: 85%;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #111;
+    }
+
+    .btn {
+      width: 180px;
+      padding: 15px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 14px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #334155, #1e293b);
+      box-shadow: 0 0 20px rgba(255,255,255,0.15);
+    }
+
+    .label {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-bottom: -10px;
     }
   </style>
 </head>
@@ -51,17 +79,40 @@
 
   <h1>Haven Guides</h1>
 
-  <div class="buttons">
-    <button class="btn" onclick="loadDoc('https://docs.google.com/document/d/1KQqM_dcDfT7kvxHq9UahjMafbES53sVYR19HXupoZuM/preview')">[ENG] Staff Guide</button>
-    
-    <button class="btn" onclick="loadDoc('https://docs.google.com/document/d/1RBmuicXwjWJVxyGsf2DIOqxA1DGuNjJgEnHGOjdAutE/preview')">[ESP] Staff Guide</button>
-    
-    <button class="btn" onclick="loadDoc('https://docs.google.com/document/d/1e4u3n29qw3avHxDVMx-0ondeAHhZJ5N4UJt_1lxP5v4/preview')">[ESP] Ranks Guide</button>
-    
-    <button class="btn" onclick="loadDoc('https://docs.google.com/document/d/1Fhn8Ptubv6v_bug9gnoeAOyduOmRtxJPOZcwpyTTlOc/preview')">[ENG] Ranks Guide</button>
-  </div>
+  <div class="layout">
 
-  <iframe id="viewer" src=""></iframe>
+    <!-- IZQUIERDA (RANKS) -->
+    <div class="side">
+      <div class="label">RANKS</div>
+
+      <div class="btn" onclick="loadDoc('https://docs.google.com/document/d/1e4u3n29qw3avHxDVMx-0ondeAHhZJ5N4UJt_1lxP5v4/preview')">
+        [ESP] Ranks Guide
+      </div>
+
+      <div class="btn" onclick="loadDoc('https://docs.google.com/document/d/1Fhn8Ptubv6v_bug9gnoeAOyduOmRtxJPOZcwpyTTlOc/preview')">
+        [ENG] Ranks Guide
+      </div>
+    </div>
+
+    <!-- CENTRO -->
+    <div class="center">
+      <iframe id="viewer" src=""></iframe>
+    </div>
+
+    <!-- DERECHA (STAFF) -->
+    <div class="side">
+      <div class="label">STAFF</div>
+
+      <div class="btn" onclick="loadDoc('https://docs.google.com/document/d/1RBmuicXwjWJVxyGsf2DIOqxA1DGuNjJgEnHGOjdAutE/preview')">
+        [ESP] Staff Guide
+      </div>
+
+      <div class="btn" onclick="loadDoc('https://docs.google.com/document/d/1KQqM_dcDfT7kvxHq9UahjMafbES53sVYR19HXupoZuM/preview')">
+        [ENG] Staff Guide
+      </div>
+    </div>
+
+  </div>
 
   <script>
     function loadDoc(url) {
