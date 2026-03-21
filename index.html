@@ -19,7 +19,7 @@
       background: black; /* base limpia */
     }
 
-    /* 🎬 FONDO LIMPIO (SIN BRILLOS RAROS) */
+    /* 🎬 FONDO LIMPIO */
     body::before {
       content: "";
       position: fixed;
@@ -56,7 +56,7 @@
       font-weight: 800;
       color: #a855f7;
       text-shadow: 0 0 25px #6a00ff;
-      cursor: pointer;
+      cursor: pointer; /* hace clickeable */
       transition: 0.3s;
     }
 
@@ -94,6 +94,13 @@
     .logo {
       width: 320px;
       opacity: 0.95;
+      cursor: pointer; /* hace clickeable */
+      transition: 0.3s;
+    }
+
+    .logo:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 20px #a855f7);
     }
 
     .btn {
@@ -120,7 +127,9 @@
 </head>
 <body>
 
-  <h1 class="title">Staff Guides</h1>
+  <h1 class="title" onclick="window.open('https://discord.com/channels/1469767859830919467/1469767861894517026/1484368971259183144','_blank')">
+    Staff Guides
+  </h1>
 
   <div class="layout">
 
@@ -141,7 +150,7 @@
 
     <!-- CENTRO -->
     <div class="center">
-      <img src="final_logo-1.png" class="logo">
+      <img src="final_logo-1.png" class="logo" onclick="window.open('https://store.havenmc.cc','_blank')">
     </div>
 
     <!-- DERECHA (INGLÉS) -->
