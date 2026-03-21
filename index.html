@@ -16,10 +16,10 @@
       color: white;
       height: 100vh;
       overflow: hidden;
-      background: black; /* base limpia */
+      background: black;
     }
 
-    /* 🎬 FONDO LIMPIO (SIN BRILLOS RAROS) */
+    /* FONDO */
     body::before {
       content: "";
       position: fixed;
@@ -34,19 +34,17 @@
       z-index: -2;
     }
 
-    /* 💜 OVERLAY MORADO LIMPIO */
+    /* OVERLAY MORADO */
     body::after {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-
       background: rgba(106, 0, 255, 0.18);
       z-index: -1;
     }
 
+    /* TITULO CLICKABLE */
     .title {
       position: absolute;
       top: 150px;
@@ -56,6 +54,13 @@
       font-weight: 800;
       color: #a855f7;
       text-shadow: 0 0 25px #6a00ff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .title:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 35px #b266ff;
     }
 
     .layout {
@@ -84,9 +89,17 @@
       align-items: center;
     }
 
+    /* LOGO CLICKABLE */
     .logo {
       width: 320px;
       opacity: 0.95;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .logo:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 20px #a855f7);
     }
 
     .btn {
@@ -113,7 +126,10 @@
 </head>
 <body>
 
-  <h1 class="title">Staff Guides</h1>
+  <!-- TITULO CON LINK -->
+  <h1 class="title" onclick="window.open('https://discord.com/channels/1469767859830919467/1469767861894517026/1484368971259183144','_blank')">
+    Staff Guides
+  </h1>
 
   <div class="layout">
 
@@ -134,7 +150,8 @@
 
     <!-- CENTRO -->
     <div class="center">
-      <img src="final_logo-1.png" class="logo">
+      <img src="final_logo-1.png" class="logo"
+        onclick="window.open('https://store.havenmc.cc','_blank')">
     </div>
 
     <!-- DERECHA (INGLÉS) -->
